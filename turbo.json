@@ -1,0 +1,47 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "stream",
+  "tasks": {
+    "clean": {},
+    "circular:check": {},
+    "type:check": {},
+    "spell:check": {
+      "inputs": [
+        "**/*"
+      ],
+      "outputs": [
+        "**/.cspellcache"
+      ]
+    },
+    "lint:check": {
+      "inputs": [
+        "**/*.{ts,tsx,js,tsx,md,json,yaml,yml,html}"
+      ],
+      "outputs": [
+        "**/*.{ts,tsx,js,tsx,md,json,yaml,yml,html}",
+        "**/.eslintcache"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "outputs": [
+        "build/**",
+        "dist/**",
+        "lib/**",
+        "node_modules/.cache/metro/**"
+      ],
+      "env": []
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "env": []
+    }
+  }
+}

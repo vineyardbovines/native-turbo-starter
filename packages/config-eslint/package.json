@@ -1,0 +1,44 @@
+{
+  "name": "@<<project>>/config-eslint",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "eslint.config.js",
+  "types": "./dist/eslint.config.d.ts",
+  "files": [
+    "eslint.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vineyardbovines/<<project>>.git",
+    "directory": "packages/config-eslint"
+  },
+  "author": "Spence Pope <spencerfpope@gmail.com>",
+  "homepage": "https://github.com/vineyardbovines/<<project>>#readme",
+  "bugs": {
+    "url": "https://github.com/vineyardbovines/<<project>>/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf dist .turbo",
+    "build": "tsc",
+    "test": "node rules/screaming-as-const.test.js"
+  },
+  "devDependencies": {
+    "@cspell/eslint-plugin": "^8.15.5",
+    "@eslint-react/eslint-plugin": "^1.15.2",
+    "@eslint/json": "^0.6.0",
+    "@eslint/markdown": "^6.2.1",
+    "@html-eslint/eslint-plugin": "^0.27.0",
+    "@html-eslint/parser": "^0.27.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.13.0",
+    "eslint-plugin-import-x": "^4.3.1",
+    "eslint-plugin-paths": "^1.1.0",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-unicorn": "^56.0.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "eslint-plugin-yml": "^1.15.0",
+    "typescript-eslint": "^8.12.2"
+  }
+}

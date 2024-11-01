@@ -1,0 +1,10 @@
+[ -n "$CI" ] && exit 0
+
+bun run lint:check
+bun run type:check
+bun run spell:check
+bun run circular:check
+
+if [[ -n $(git diff) ]]; then
+    git add -u
+fi

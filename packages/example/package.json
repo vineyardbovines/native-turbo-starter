@@ -1,0 +1,55 @@
+{
+  "name": "@<<project>>/example",
+  "version": "1.0.0",
+  "description": "Example package",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "react-native": "./src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vineyardbovines/<<project>>.git",
+    "directory": "packages/example"
+  },
+  "author": "Spence Pope <spencerfpope@gmail.com>",
+  "homepage": "https://github.com/vineyardbovines/<<project>>#readme",
+  "bugs": {
+    "url": "https://github.com/vineyardbovines/<<project>>/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf node_modules .turbo dist",
+    "build": "tsup",
+    "dev": "tsup --watch --silent",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "type:check": "tsc --pretty --noEmit",
+    "lint:check": "eslint . --color --cache --quiet --fix",
+    "spell:check": "cspell --no-progress --show-suggestions --show-context --cache .",
+    "circular:check": "madge --circular --warning --extensions ts,tsx src/ --exclude \"dist/.+\""
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "@types/jest": "*",
+    "@types/react": "*",
+    "expo": "*",
+    "jest": "*",
+    "jest-expo": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "engines": {
+    "node": "~20.0.0",
+    "bun": "~1.1.0"
+  },
+  "packageManager": "bun@1.1.0",
+  "os": [
+    "darwin",
+    "linux"
+  ]
+}

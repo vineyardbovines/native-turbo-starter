@@ -1,0 +1,53 @@
+{
+  "name": "native-turbo-starter",
+  "description": "Turborepo starter for Expo / React Native projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vineyardbovines/<<project>>.git"
+  },
+  "author": "Spence Pope <spencerfpope@gmail.com>",
+  "homepage": "https://github.com/vineyardbovines/<<project>>#readme",
+  "bugs": {
+    "url": "https://github.com/vineyardbovines/<<project>>/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dotenvx": "dotenvx",
+    "dev": "dotenvx run -- turbo dev",
+    "build": "dotenvx run -- turbo build",
+    "clean": "turbo clean",
+    "spell:check": "turbo spell:check",
+    "type:check": "turbo type:check",
+    "lint:check": "turbo lint:check",
+    "test": "turbo test",
+    "test:ci": "turbo test -- --ci",
+    "test:coverage": "turbo test:coverage",
+    "test:watch": "turbo test:watch",
+    "circular:check": "turbo run circular:check",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@<<project>>/config-eslint": "workspace:*",
+    "@<<project>>/config-typescript": "workspace:*",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@dotenvx/dotenvx": "^1.21.1",
+    "@release-it/conventional-changelog": "^9.0.2",
+    "commitlint": "^19.5.0",
+    "cspell": "^8.15.5",
+    "husky": "^9.1.6",
+    "madge": "^8.0.0",
+    "release-it": "^17.10.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "bun@1.1.33",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

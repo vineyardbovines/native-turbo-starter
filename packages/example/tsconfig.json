@@ -1,0 +1,9 @@
+{
+  "extends": "@<<project>>/config-typescript/native.json",
+  "compilerOptions": {
+    "paths": {
+      "~/hooks/*": ["./src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
+}
