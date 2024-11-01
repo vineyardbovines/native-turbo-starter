@@ -1,7 +1,7 @@
 {
-  "name": "@<<project>>/example",
+  "name": "@{{ kebabCase scope }}/{{ kebabCase name }}",
   "version": "1.0.0",
-  "description": "Example package",
+  "description": "{{ kebabCase name }} package",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,18 +12,26 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vineyardbovines/<<project>>.git",
-    "directory": "packages/example"
+    "url": "https://github.com/vineyardbovines/{{ kebabCase scope }}.git",
+    "directory": "packages/{{ kebabCase name }}"
   },
   "author": "Spence Pope <spencerfpope@gmail.com>",
-  "homepage": "https://github.com/vineyardbovines/<<project>>#readme",
+  "homepage": "https://github.com/vineyardbovines/{{ kebabCase scope }}#readme",
   "bugs": {
-    "url": "https://github.com/vineyardbovines/<<project>>/issues"
+    "url": "https://github.com/vineyardbovines/{{ kebabCase scope }}/issues"
   },
   "license": "MIT",
+  "source": "./src/index.tsx",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/commonjs/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "clean": "rm -rf dist .turbo .*cache node_modules/.cache",
-    "build": "tsup",
+    "build": "bob build",
     "dev": "tsup --watch --silent",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -33,7 +41,9 @@
     "spell:check": "cspell --no-progress --show-suggestions --show-context --cache .",
     "circular:check": "madge --circular --warning --extensions ts,tsx src/ --exclude \"dist/.+\""
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "react-native-builder-bob": "^0.30.3"
+  },
   "peerDependencies": {
     "@babel/plugin-transform-private-methods": "*",
     "@babel/preset-typescript": "*",
@@ -54,5 +64,29 @@
   "os": [
     "darwin",
     "linux"
-  ]
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "commonjs",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "esm": true
+        }
+      ]
+    ]
+  }
 }

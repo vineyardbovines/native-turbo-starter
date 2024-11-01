@@ -38,12 +38,14 @@ export default tseslint.config(
 
   {
     ignores: [
-      ".*",
-      "build/**",
-      "dist/**",
-      "lib/**",
+      ".git/**",
+      "**/.turbo/**",
+      "**/build/**",
+      "**/dist/**",
+      "**/lib/**",
       "*.config.{ts,js}",
-      "*.{json,html,md,yaml,yml}"
+      "*.{json,html,md,yaml,yml}",
+      "**/*.d.ts"
     ]
   },
 

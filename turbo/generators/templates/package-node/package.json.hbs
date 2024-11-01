@@ -1,7 +1,7 @@
 {
-  "name": "@<<project>>/example",
-  "version": "1.0.0",
-  "description": "Example package",
+  "name": "@{{ kebabCase scope }}/{{ kebabCase name }}",
+  "version": "0.0.0",
+  "description": "{{ description }}"
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,13 +12,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vineyardbovines/<<project>>.git",
-    "directory": "packages/example"
+    "url": "https://github.com/vineyardbovines/{{ kebabCase scope }}.git",
+    "directory": "packages/{{ kebabCase name }}"
   },
   "author": "Spence Pope <spencerfpope@gmail.com>",
-  "homepage": "https://github.com/vineyardbovines/<<project>>#readme",
+  "homepage": "https://github.com/vineyardbovines/{{ kebabCase scope }}#readme",
   "bugs": {
-    "url": "https://github.com/vineyardbovines/<<project>>/issues"
+    "url": "https://github.com/vineyardbovines/{{ kebabCase scope }}/issues"
   },
   "license": "MIT",
   "scripts": {
@@ -34,18 +34,7 @@
     "circular:check": "madge --circular --warning --extensions ts,tsx src/ --exclude \"dist/.+\""
   },
   "devDependencies": {},
-  "peerDependencies": {
-    "@babel/plugin-transform-private-methods": "*",
-    "@babel/preset-typescript": "*",
-    "@types/jest": "*",
-    "@types/react": "*",
-    "babel-preset-expo": "*",
-    "expo": "*",
-    "jest": "*",
-    "jest-expo": "*",
-    "react": "*",
-    "react-native": "*"
-  },
+  "peerDependencies": {},
   "engines": {
     "node": "~20.0.0",
     "bun": "~1.1.0"

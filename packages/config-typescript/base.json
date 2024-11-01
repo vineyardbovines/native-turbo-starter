@@ -6,6 +6,7 @@
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
     "esModuleInterop": true,
+    "incremental": true,
     "isolatedModules": true,
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
@@ -19,7 +20,11 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "verbatimModuleSyntax": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
   },
+  "include": [
+    "${configDir}/src"
+  ],
   "exclude": [
     "node_modules",
   ]
