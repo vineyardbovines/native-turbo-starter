@@ -45,6 +45,13 @@
           }
         ]
       }
+    },
+    "@release-it-plugins/workspaces": {
+      "publish": false,
+      "skipChecks": true,
+      "workspaces": [
+        "packages/*"
+      ]
     }
   }
 }

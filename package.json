@@ -24,6 +24,7 @@
     "test:coverage": "turbo test:coverage",
     "test:watch": "turbo test:watch",
     "circular:check": "turbo run circular:check",
+    "release": "release-it",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@<<project>>/config-typescript": "workspace:*",
     "@commitlint/config-conventional": "^19.5.0",
     "@dotenvx/dotenvx": "^1.21.1",
+    "@release-it-plugins/workspaces": "^4.2.0",
     "@release-it/conventional-changelog": "^9.0.2",
     "commitlint": "^19.5.0",
     "cspell": "^8.15.5",
